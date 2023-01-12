@@ -1,0 +1,986 @@
+{
+    "aalt": {
+        "cmd": "None",
+        "desc": [
+            "Access All Alternates",
+            "This feature is not supported on fontspec."
+        ],
+        "type": "not-supported"
+    },
+    "abvf": {
+        "cmd": "None",
+        "desc": [
+            "Above-base Forms",
+            "This feature is not supported on fontspec."
+        ],
+        "type": "not-supported"
+    },
+    "abvm": {
+        "cmd": "Diacritics = AboveBase",
+        "desc": [
+            "Above-base Mark Positioning",
+            "Positions marks above base glyphs. Used for Indic or other Brahmi-derived scripts."
+        ],
+        "type": "diacritics"
+    },
+    "abvs": {
+        "cmd": "None",
+        "desc": [
+            "Above-base Substitution",
+            "This feature is not supported on fontspec."
+        ],
+        "type": "not-supported"
+    },
+    "afrc": {
+        "cmd": "Fractions = Alternate",
+        "desc": [
+            "Alternative Fractions",
+            "Activates the construction of ‘vulgar’ fractions using precomposed glyphs and/or subscript and superscript characters from within the font. Off by default."
+        ],
+        "type": "fractions"
+    },
+    "akhn": {
+        "cmd": "None",
+        "desc": [
+            "Akhands",
+            "This feature is not supported on fontspec."
+        ],
+        "type": "not-supported"
+    },
+    "blwf": {
+        "cmd": "None",
+        "desc": [
+            "Below-base Forms",
+            "This feature is not supported on fontspec."
+        ],
+        "type": "not-supported"
+    },
+    "blwm": {
+        "cmd": "Diacritics = BelowBase",
+        "desc": [
+            "Below-base Mark Positioning",
+            "Positions marks below base glyphs. Used for Indic or other Brahmi-derived scripts. Off by default."
+        ],
+        "type": "diacritics"
+    },
+    "blws": {
+        "cmd": "None",
+        "desc": [
+            "Below-base Substitution",
+            "This feature is not supported on fontspec."
+        ],
+        "type": "not-supported"
+    },
+    "calt": {
+        "cmd": "Contextuals = Alternate",
+        "desc": [
+            "Contextual Alternates",
+            "Replaces default glyphs with alternate forms which provide better joining behavior. Used in script typefaces which are designed to have some or all of their glyphs join."
+        ],
+        "type": "contextuals"
+    },
+    "case": {
+        "cmd": "Letters = Uppercase",
+        "desc": [
+            "Case-Sensitive Forms",
+            "Shifts various punctuation marks up to a position that works better with all-capital sequences or sets of lining figures; also changes oldstyle figures to lining figures."
+        ],
+        "type": "letters"
+    },
+    "ccmp": {
+        "cmd": "None",
+        "desc": [
+            "Glyph Composition/Decomposition",
+            "This feature is not supported on fontspec."
+        ],
+        "type": "not-supported"
+    },
+    "cfar": {
+        "cmd": "None",
+        "desc": [
+            "Conjunct Form After Ro",
+            "This feature is not supported on fontspec."
+        ],
+        "type": "not-supported"
+    },
+    "chws": {
+        "cmd": "None",
+        "desc": [
+            "Contextual Half-width Spacing",
+            "This feature is not supported on fontspec."
+        ],
+        "type": "not-supported"
+    },
+    "cjct": {
+        "cmd": "None",
+        "desc": [
+            "Conjunct Forms",
+            "This feature is not supported on fontspec."
+        ],
+        "type": "not-supported"
+    },
+    "clig": {
+        "cmd": "Ligatures = Contextual",
+        "desc": [
+            "Contextual Ligatures",
+            "Replaces a sequence of glyphs with a single glyph which is preferred for typographic purposes. Unlike other ligature features, 'clig' specifies the context in which the ligature is recommended. This capability is important in some script designs and for swash ligatures."
+        ],
+        "type": "ligatures"
+    },
+    "cpct": {
+        "cmd": "None",
+        "desc": [
+            "Centred CJK Punctuation",
+            "This feature is not supported on fontspec."
+        ],
+        "type": "not-supported"
+    },
+    "cpsp": {
+        "cmd": "Kerning = Uppercase",
+        "desc": [
+            "Capital Spacing",
+            "Globally adjusts inter-glyph spacing for all-capital text. Most typefaces contain capitals and lowercase characters, and the capitals are positioned to work with the lowercase. When capitals are used for words, they need more space between them for legibility and aesthetics."
+        ],
+        "type": "kerning"
+    },
+    "cswh": {
+        "cmd": "Contextuals = Swash",
+        "desc": [
+            "Contextual Swash",
+            "Replaces default character glyphs with corresponding swash glyphs in a specified context. Note that there may be more than one swash alternate for a given character."
+        ],
+        "type": "contextuals"
+    },
+    "curs": {
+        "cmd": "None",
+        "desc": [
+            "Cursive Positioning",
+            "This feature is not supported on fontspec."
+        ],
+        "type": "not-supported"
+    },
+    "cvNN": {
+        "cmd": "CharacterVariant = N:M",
+        "desc": ["Character Variant N", ""],
+        "type": "character-variant"
+    },
+    "c2pc": {
+        "cmd": "Letters = UppercasePetiteCaps",
+        "desc": [
+            "Petite Capitals From Capitals",
+            "Turns capital characters into petite capitals. It is generally used for words which would otherwise be set in all caps, such as acronyms, but which are desired in petite-cap form to avoid disrupting the flow of text. Used for bicameral scripts (i.e. those with case differences), such as Latin, Greek, Cyrillic, and Armenian, off by default."
+        ],
+        "type": "letters"
+    },
+    "c2sc": {
+        "cmd": "Letters = UppercaseSmallCaps",
+        "desc": [
+            "Small Capitals From Capitals",
+            "Turns capital characters into small capitals. It is generally used for words which would otherwise be set in all caps, such as acronyms, but which are desired in small-cap form to avoid disrupting the flow of text. Used for bicameral scripts (i.e. those with case differences), such as Latin, Greek, Cyrillic, and Armenian, off by default."
+        ],
+        "type": "letters"
+    },
+    "dist": {
+        "cmd": "None",
+        "desc": [
+            "Distances",
+            "This feature is not supported on fontspec."
+        ],
+        "type": "not-supported"
+    },
+    "dlig": {
+        "cmd": "Ligatures = Rare",
+        "desc": [
+            "Discretionary Ligatures",
+            "Replaces a sequence of glyphs with a single glyph which is preferred for typographic purposes. This feature covers those ligatures which may be used for special effect, at the user’s preference. Off by default."
+        ],
+        "type": "ligatures"
+    },
+    "dnom": {
+        "cmd": "VerticalPosition = Denominator",
+        "desc": [
+            "Denominators",
+            "Replaces selected figures which follow a slash with denominator figures."
+        ],
+        "type": "vertical-position"
+    },
+    "dtls": {
+        "cmd": "None",
+        "desc": [
+            "Dotless Forms",
+            "This feature is not supported on fontspec."
+        ],
+        "type": "not-supported"
+    },
+    "expt": {
+        "cmd": "CJKShape = Expert",
+        "desc": [
+            "Expert Forms",
+            "Replaces standard forms in Japanese fonts with corresponding forms preferred by typographers. Although most of the JIS78 substitutions are included, the expert substitution goes on to handle many more characters. Applies only to Japanese"
+        ],
+        "type": "cjk-shape"
+    },
+    "falt": {
+        "cmd": "Contextuals = LineFinal",
+        "desc": [
+            "Final Glyph on Line Alternates",
+            "Replaces line final glyphs with alternate forms specifically designed for this purpose (they would have less or more advance width as need may be), to help justification of text."
+        ],
+        "type": "contextuals"
+    },
+    "fin2": {
+        "cmd": "None",
+        "desc": [
+            "Terminal Form #2",
+            "This feature is not supported on fontspec."
+        ],
+        "type": "not-supported"
+    },
+    "fin3": {
+        "cmd": "None",
+        "desc": [
+            "Terminal Form #3",
+            "This feature is not supported on fontspec."
+        ],
+        "type": "not-supported"
+    },
+    "fina": {
+        "cmd": "Contextuals = WordFinal",
+        "desc": [
+            "Terminal Forms",
+            "Replaces glyphs for characters that have applicable joining properties with an alternate form when occurring in a final context."
+        ],
+        "type": "contextuals"
+    },
+    "flac": {
+        "cmd": "None",
+        "desc": [
+            "Flattened Accent Forms",
+            "This feature is not supported on fontspec."
+        ],
+        "type": "not-supported"
+    },
+    "frac": {
+        "cmd": "Fractions = On",
+        "desc": [
+            "Fractions",
+            "Replaces figures (digits) separated by a slash (U+002F or U+2044) with “common” (diagonal) fractions. Off by default."
+        ],
+        "type": "fractions"
+    },
+    "fwid": {
+        "cmd": "CharacterWidth = Full",
+        "desc": [
+            "Full Widths",
+            "Replaces glyphs set on other widths with glyphs set on full (usually em) widths. In a CJKV font, this may include “lower ASCII” Latin characters and various symbols. In a European font, this feature replaces proportionally-spaced glyphs with monospaced glyphs, which are generally set on widths of 0.6 em. Off by default."
+        ],
+        "type": "character-width"
+    },
+    "half": {
+        "cmd": "None",
+        "desc": [
+            "Half Forms",
+            "This feature is not supported on fontspec."
+        ],
+        "type": "not-supported"
+    },
+    "haln": {
+        "cmd": "None",
+        "desc": [
+            "Halant Forms",
+            "This feature is not supported on fontspec."
+        ],
+        "type": "not-supported"
+    },
+    "halt": {
+        "cmd": "CharacterWidth = AlternateHalf",
+        "desc": [
+            "Alternate Half Widths",
+            "Re-spaces glyphs designed to be set on full-em widths, fitting them onto half-em widths, to approximate more sophisticated text layout (e.g. JLREQ Section 3.1.4) or similar CJKV text-layout specifications that expect half-width forms of characters whose default glyphs are full-width.* This feature differs from 'hwid' in that it is not used to substitute new glyphs."
+        ],
+        "type": "character-width"
+    },
+    "hist": {
+        "cmd": "Style = Historic",
+        "desc": [
+            "Historical Forms",
+            "Replaces the default (current) forms with the historical alternates. While some ligatures are also used for historical effect, this feature deals only with single characters. Off by default."
+        ],
+        "type": "style"
+    },
+    "hkna": {
+        "cmd": "Style = HorizontalKana",
+        "desc": [
+            "Horizontal Kana Alternates",
+            "Replaces standard kana with forms that have been specially designed for only horizontal writing. This is a typographic optimisation for improved fit and more even colour. Used only for Hiragana and Katakana (Japanese), off by default."
+        ],
+        "type": "style"
+    },
+    "hlig": {
+        "cmd": "Ligatures = Historic",
+        "desc": [
+            "Historical Ligatures",
+            "Some ligatures were in common use in the past, but appear anachronistic today. Some fonts include the historical forms as alternates, so they can be used for a “period” effect. This feature replaces the default (current) forms with the historical alternates. Off by default."
+        ],
+        "type": "ligatures"
+    },
+    "hngl": {
+        "cmd": "None",
+        "desc": [
+            "Hangul (DEPRECATED)",
+            "This feature is not supported on fontspec."
+        ],
+        "type": "deprecated"
+    },
+    "hojo": {
+        "cmd": "None",
+        "desc": [
+            "Hojo Kanji Forms",
+            "This feature is not supported on fontspec."
+        ],
+        "type": "not-supported"
+    },
+    "hwid": {
+        "cmd": "CharacterWidth = Half",
+        "desc": [
+            "Half Widths",
+            "Replaces glyphs on proportional widths, or fixed widths other than half an em, with glyphs on half-em (en) widths. Many CJKV fonts have glyphs which are set on multiple widths; this feature selects the half-em version. There are various contexts in which this is the preferred behaviour, including compatibility with older desktop documents. Used in CJKV fonts, off by default."
+        ],
+        "type": "character-width"
+    },
+    "init": {
+        "cmd": "Contextuals = WordInitial",
+        "desc": [
+            "Initial Forms",
+            "Replaces glyphs for characters that have applicable joining properties with an alternate form when occurring in an initial context."
+        ],
+        "type": "contextuals"
+    },
+    "isol": {
+        "cmd": "None",
+        "desc": [
+            "Isolated Forms",
+            "This feature is not supported on fontspec."
+        ],
+        "type": "not-supported"
+    },
+    "ital": {
+        "cmd": "Style = Italic",
+        "desc": [
+            "Italics",
+            "Some fonts will have both Roman and Italic forms of some characters in a single font. This feature replaces the Roman glyphs with the corresponding Italic glyphs. Used mostly for Latin, particularly in fonts designed primarily for CJKV or other scripts that do not normally use italics."
+        ],
+        "type": "style"
+    },
+    "jalt": {
+        "cmd": "None",
+        "desc": [
+            "Justification Alternates",
+            "This feature is not supported on fontspec."
+        ],
+        "type": "not-supported"
+    },
+    "jp78": {
+        "cmd": "CJKShape = JIS1978",
+        "desc": [
+            "JIS78 Forms",
+            "Replaces default (JIS90) Japanese glyphs with the corresponding forms from the JIS C 6226-1978 (JIS78) specification. Applies only to Japanese, off by default."
+        ],
+        "type": "cjk-shape"
+    },
+    "jp83": {
+        "cmd": "CJKShape = JIS1983",
+        "desc": [
+            "JIS83 Forms",
+            "Replaces default (JIS90) Japanese glyphs with the corresponding forms from the JIS X 0208-1983 (JIS83) specification. Applies only to Japanese, off by default."
+        ],
+        "type": "cjk-shape"
+    },
+    "jp90": {
+        "cmd": "CJKShape = JIS1990",
+        "desc": [
+            "JIS90 Forms",
+            "Replaces Japanese glyphs from the JIS78 or JIS83 specifications with the corresponding forms from the JIS X 0208-1990 (JIS90) specification."
+        ],
+        "type": "cjk-shape"
+    },
+    "jp04": {
+        "cmd": "CJKShape = JIS2004",
+        "desc": [
+            "JIS04 Forms",
+            "The National Language Council (NLC) of Japan had defined new glyph shapes for a number of JIS characters, which were incorporated into JIS X 0213:2004 as new prototypical forms. The 'jp04' feature is a subset of the 'nlck' feature, and is used to access these prototypical glyphs in a manner that maintains the integrity of JIS X 0213:2004."
+        ],
+        "type": "cjk-shape"
+    },
+    "kern": {
+        "cmd": "Kerning = On",
+        "desc": [
+            "Kerning",
+            "Adjusts amount of space between glyphs, generally to provide optically consistent spacing between glyphs. This feature can supply size-dependent kerning data via device tables, “cross-stream” kerning in the Y text direction, and adjustment of glyph placement independent of the advance adjustment. Note that this feature may apply to runs of more than two glyphs, and would not be used in monospaced fonts. Also note that this feature does not apply to text set vertically."
+        ],
+        "type": "kerning"
+    },
+    "lfbd": {
+        "cmd": "None",
+        "desc": [
+            "Left Bounds",
+            "This feature is not supported on fontspec."
+        ],
+        "type": "not-supported"
+    },
+    "ljmo": {
+        "cmd": "None",
+        "desc": [
+            "Leading Jamo Forms",
+            "This feature is not supported on fontspec."
+        ],
+        "type": "not-supported"
+    },
+    "liga": {
+        "cmd": "Ligatures = Common",
+        "desc": [
+            "Standard Ligatures",
+            "Replaces a sequence of glyphs with a single glyph which is preferred for typographic purposes. This feature covers the ligatures which the designer/manufacturer judges should be used in normal conditions."
+        ],
+        "type": "ligatures"
+    },
+    "lnum": {
+        "cmd": "Numbers = Uppercase/Lining",
+        "desc": [
+            "Lining Figures",
+            "Most common figures, refers to the fact that figures “line up” at the top and bottom. Always preferred for all caps text because they come closest to cap height. Note that this feature is distinct from the figure width features ('pnum' and 'tnum')"
+        ],
+        "type": "numbers"
+    },
+    "locl": {
+        "cmd": "LocalForms = On",
+        "desc": [
+            "Localised Forms",
+            "Many scripts used to write multiple languages over wide geographical areas have developed localised variant forms of specific letters, which are used by individual literary communities. For example, a number of letters in the Bulgarian and Serbian alphabets have forms distinct from their Russian counterparts and from each other. In some cases the localised form differs only subtly from the script “norm”, in others the forms are radically distinct. This feature enables localised forms of glyphs to be substituted for default forms."
+        ],
+        "type": "local-forms"
+    },
+    "ltra": {
+        "cmd": "None",
+        "desc": [
+            "L-to-R Glyph Alternates",
+            "This feature is not supported on fontspec."
+        ],
+        "type": "not-supported"
+    },
+    "ltrm": {
+        "cmd": "None",
+        "desc": [
+            "L-to-R Mirrored Forms",
+            "This feature is not supported on fontspec."
+        ],
+        "type": "not-supported"
+    },
+    "mark": {
+        "cmd": "Diacritics = MarkToBase",
+        "desc": [
+            "Mark Positioning",
+            "Specifies how combining diacritics should be placed. These will usually be controlled automatically according to the Script setting"
+        ],
+        "type": "diacritics"
+    },
+    "med2": {
+        "cmd": "None",
+        "desc": [
+            "Medial Forms #2",
+            "This feature is not supported on fontspec."
+        ],
+        "type": "not-supported"
+    },
+    "medi": {
+        "cmd": "Contextuals = Inner",
+        "desc": [
+            "Medial Forms",
+            "Refers to substitutions of glyphs that vary ‘contextually’ by their relative position in a word or string of characters. This applies to characters that have the `Unicode Joining_Type ` property value `Dual_Joining`."
+        ],
+        "type": "contextuals"
+    },
+    "mgrk": {
+        "cmd": "None",
+        "desc": [
+            "Mathematical Greek",
+            "This feature is not supported on fontspec."
+        ],
+        "type": "not-supported"
+    },
+    "mkmk": {
+        "cmd": "Diacritics = MarkToMark",
+        "desc": [
+            "Mark to Mark Positioning",
+            "Specifies how combining diacritics should be placed. Required in various non-Latin scripts like Arabic."
+        ]
+    },
+    "mset": {
+        "cmd": "None",
+        "desc": [
+            "Combining Marks (DEPRECATED)",
+            "This feature is not supported on fontspec."
+        ],
+        "type": "deprecated"
+    },
+    "nalt": {
+        "cmd": "Annotation = N",
+        "desc": [
+            "Alternate Annotation Forms",
+            "Replaces default glyphs with various notational forms (e.g. glyphs placed in open or solid circles, squares, parentheses, diamonds or rounded boxes). In some cases an annotation form may already be present, but the user may want a different one. These are selected numerically, starting from zero."
+        ],
+        "type": "annotation"
+    },
+    "nlck": {
+        "cmd": "CJKShape = NLC",
+        "desc": [
+            "NLC Kanji Forms",
+            "The National Language Council (NLC) of Japan has defined new glyph shapes for a number of JIS characters in 2000. The ‘nlck’ feature is used to access those glyphs. Used only for Kanji characters in Japanese."
+        ]
+    },
+    "nukt": {
+        "cmd": "None",
+        "desc": [
+            "Nukta Forms",
+            "This feature is not supported on fontspec."
+        ],
+        "type": "not-supported"
+    },
+    "numr": {
+        "cmd": "VerticalPosition = Numerator",
+        "desc": [
+            "Numerator",
+            "Replaces selected figures (digits) which precede a slash with numerator figures, and replaces the typographic slash with the fraction slash. Should be applied automatically as part of the font’s implementation for the ‘frac’ feature."
+        ],
+        "type": "vertical-position"
+    },
+    "onum": {
+        "cmd": "Numbers = OldStyle",
+        "desc": [
+            "Oldstyle Figures",
+            "Changes the default or lining style to oldstyle form. These are designed to look more like lowercase letters---Some are short, some descend below the baseline, and some ascend. You won’t be surprised to hear that oldstyle figures work best in lowercase body text. Note that “figures” in this context are numerals."
+        ],
+        "type": "numbers"
+    },
+    "opbd": {
+        "cmd": "None",
+        "desc": [
+            "Optical Bounds (DEPRECATED)",
+            "This feature is not supported on fontspec."
+        ],
+        "type": "deprecated"
+    },
+    "ordn": {
+        "cmd": "VerticalPosition = Ordinal",
+        "desc": [
+            "Ordinals",
+            "Replaces default alphabetic glyphs with the corresponding ordinal forms for use after figures. One exception to the follows-a-figure rule is the numero character (U+2116), which is actually a ligature substitution, but is best accessed through this feature. Used mostly for Latin script, off by default."
+        ],
+        "type": "vertical-position"
+    },
+    "ornm": {
+        "cmd": "Ornament = N",
+        "desc": [
+            "Ornaments",
+            "Dual-function feature, which uses two input methods to give the user access to ornament glyphs (e.g. fleurons, dingbats and border elements) in the font. One method replaces the bullet character with a selection from the full set of available ornaments; the other replaces specific “lower ASCII” characters with ornaments assigned to them. The first approach supports the general or browsing user; the second supports the power user"
+        ],
+        "type": "ornaments"
+    },
+    "palt": {
+        "cmd": "CharacterWidth = AlternateProportional",
+        "desc": [
+            "Proportional Alternate Widths",
+            "Re-spaces glyphs designed to be set on full-em widths, fitting them onto individual (more or less proportional) horizontal widths. Useful if one desires to ensure that the glyph is well-fit and not rotated in vertical setting. This differs from 'pwid' in that it does not substitute new glyphs. Used mostly in CJKV fonts."
+        ],
+        "type": "character-width"
+    },
+    "pcap": {
+        "cmd": "Letters = PetiteCaps",
+        "desc": [
+            "Petite Capitals",
+            "Some fonts contain an additional size of capital letters, shorter than the regular smallcaps and whimsically referred to as petite caps. Such forms are most likely to be found in designs with a small lowercase x-height, where they better harmonise with lowercase text than the taller smallcaps (for examples of petite caps, see the Emigre type families Mrs Eaves and Filosofia). This feature turns glyphs for lowercase characters into petite capitals. Off by default."
+        ]
+    },
+    "pkna": {
+        "cmd": "Style = ProportionalKana",
+        "desc": [
+            "Proportional Kana",
+            "Replaces glyphs, kana and kana-related, set on uniform widths (half or full-width) with proportional glyphs. Generaly used only in Japanese fonts, off by default."
+        ]
+    },
+    "pnum": {
+        "cmd": "Numbers = Proportional",
+        "desc": [
+            "Proportional Figures",
+            "Replaces figure glyphs set on uniform (tabular) widths with corresponding glyphs set on glyph-specific (proportional) widths. Tabular widths (tnum) will generally be the default, but this cannot be safely assumed."
+        ],
+        "type": "numbers"
+    },
+    "pref": {
+        "cmd": "None",
+        "desc": [
+            "Pre-base Forms",
+            "This feature is not supported on fontspec."
+        ],
+        "type": "not-supported"
+    },
+    "pres": {
+        "cmd": "None",
+        "desc": [
+            "Pre-base Substitutions",
+            "This feature is not supported on fontspec."
+        ],
+        "type": "not-supported"
+    },
+    "pstf": {
+        "cmd": "None",
+        "desc": [
+            "Post-base Forms",
+            "This feature is not supported on fontspec."
+        ],
+        "type": "not-supported"
+    },
+    "psts": {
+        "cmd": "None",
+        "desc": [
+            "Post-base Substitutions",
+            "This feature is not supported on fontspec."
+        ],
+        "type": "not-supported"
+    },
+    "pwid": {
+        "cmd": "CharacterWidth = Proportional",
+        "desc": [
+            "Proportional Widths",
+            "Replaces glyphs set on uniform widths (typically full or half-em) with proportionally spaced glyphs. The proportional variants are often used for the Latin characters in CJKV fonts, but may also be used for Kana in Japanese fonts."
+        ],
+        "type": "character-width"
+    },
+    "qwid": {
+        "cmd": "CharacterWidth = Quarter",
+        "desc": [
+            "Quarter Widths",
+            "Replaces glyphs on other widths with glyphs set on widths of one quarter of an em (half an en). The characters involved are normally figures and some forms of punctuation. Generally used only in CJKV fonts."
+        ],
+        "type": "character-width"
+    },
+    "rand": {
+        "cmd": "Letters = Random",
+        "desc": [
+            "Randomise",
+            "In order to emulate the irregularity and variety of handwritten text, this feature allows multiple alternate forms to be used."
+        ],
+        "type": "letters"
+    },
+    "rclt": {
+        "cmd": "None",
+        "desc": [
+            "Required Contextual Alternates",
+            "This feature is not supported on fontspec."
+        ],
+        "type": "not-supported"
+    },
+    "rktf": {
+        "cmd": "None",
+        "desc": [
+            "Rakar Forms",
+            "This feature is not supported on fontspec."
+        ],
+        "type": "not-supported"
+    },
+    "rlig": {
+        "cmd": "Ligatures = Required",
+        "desc": [
+            "Required Ligatures",
+            "Replaces a sequence of glyphs with a single glyph which is preferred for typographic purposes. This feature covers those ligatures, which the script determines as required to be used in normal conditions. This feature is important for some scripts to ensure correct glyph formation. Used for Arabic and Syriac, but may also be used for other scripts."
+        ],
+        "type": "ligatures"
+    },
+    "rphf": {
+        "cmd": "None",
+        "desc": [
+            "Reph Forms",
+            "This feature is not supported on fontspec."
+        ],
+        "type": "not-supported"
+    },
+    "rtbd": {
+        "cmd": "None",
+        "desc": [
+            "Right Bounds",
+            "This feature is not supported on fontspec."
+        ],
+        "type": "not-supported"
+    },
+    "rtla": {
+        "cmd": "None",
+        "desc": [
+            "R-to-L Alternates",
+            "This feature is not supported on fontspec."
+        ],
+        "type": "not-supported"
+    },
+    "rtlm": {
+        "cmd": "None",
+        "desc": [
+            "R-to-L Mirrored Forms",
+            "This feature is not supported on fontspec."
+        ],
+        "type": "not-supported"
+    },
+    "ruby": {
+        "cmd": "Style = Ruby",
+        "desc": [
+            "Ruby",
+            "Identifies glyphs in the font which have been designed for ‘ruby’, substituting them for the default designs. Ruby are smaller kana glyphs in Japanese typesetting often in superscripted form to clarify the meaning/sound of kanji which may be unfamiliar to the reader. Used for Japanese."
+        ],
+        "type": "style"
+    },
+    "rvrn": {
+        "cmd": "None",
+        "desc": [
+            "Required Variations Alternates",
+            "This feature is not supported on fontspec."
+        ],
+        "type": "not-supported"
+    },
+    "salt": {
+        "cmd": "Alternate = N",
+        "desc": [
+            "Stylistic Alternates",
+            "Many fonts contain alternate glyph designs for a purely aesthetic effect; these don’t always fit into a clear category like swash or historical. As in the case of swash glyphs, there may be more than one alternate form. This feature replaces the default forms with the stylistic alternates."
+        ],
+        "type": "alternate"
+    },
+    "sinf": {
+        "cmd": "VerticalPosition = ScientificInferior",
+        "desc": [
+            "Scientific Inferiors",
+            "Replaces lining or oldstyle figures (digits) with inferior figures (smaller glyphs which sit lower than the standard baseline, primarily for chemical or mathematical notation). May also replace glyphs for lowercase characters with alphabetic inferiors. Off by default."
+        ],
+        "type": "vertical-position"
+    },
+    "size": {
+        "cmd": "None",
+        "desc": [
+            "Optical Size (DEPRECATED)",
+            "This feature is not supported on fontspec."
+        ],
+        "type": "deprecated"
+    },
+    "smcp": {
+        "cmd": "Letters = SmallCaps",
+        "desc": [
+            "Small Capitals",
+            "Turns glyphs for lowercase characters into small capitals. Generally used for display lines set in Large and small caps such as titles. Should be off by default."
+        ],
+        "type": "letters"
+    },
+    "smpl": {
+        "cmd": "CJKShape = Simplified",
+        "desc": [
+            "Simplified Forms",
+            "Replaces “traditional” Chinese or Japanese forms with the corresponding “simplified” forms. Used only for Chinese and Japanese."
+        ],
+        "type": "cjk-shape"
+    },
+    "ssNN": {
+        "cmd": "StylisticSet = N",
+        "desc": [
+            "Stylistic Set N",
+            "Many fonts contain alternate glyph designs for a purely aesthetic effect; these don’t always fit into a clear category like swash or historical. As in the case of swash glyphs, there may be more than one alternate form. This feature replaces the default forms with the stylistic alternates."
+        ],
+        "type": "stylistic-set"
+    },
+    "ssty": {
+        "cmd": "Style = MathScript",
+        "desc": [
+            "Maths script style alternates",
+            "Provides glyph variants adjusted to be more suitable for use in subscripts and superscripts"
+        ],
+        "type": "style"
+    },
+    "stch": {
+        "cmd": "None",
+        "desc": [
+            "Stretching Glyph Decomposition",
+            "This feature is not supported on fontspec."
+        ],
+        "type": "not-supported"
+    },
+    "subs": {
+        "cmd": "VerticalPosition = Inferior",
+        "desc": [
+            "Subscript",
+            "May replace a default glyph with a subscript glyph, or it may combine a glyph substitution with positioning adjustments for proper placement. Off by default."
+        ],
+        "type": "vertical-position"
+    },
+    "sups": {
+        "cmd": "VerticalPosition = Superior",
+        "desc": [
+            "Superscript",
+            "May replace a default glyph with a superscript glyph, or it may combine a glyph substitution with positioning adjustments for proper placement. Off by default."
+        ],
+        "type": "vertical-position"
+    },
+    "swsh": {
+        "cmd": "Style = Swash",
+        "desc": [
+            "Swash",
+            "Replaces default character glyphs with corresponding swash glyphs. Note that there may be more than one swash alternate for a given character."
+        ],
+        "type": "style"
+    },
+    "titl": {
+        "cmd": "Style = Titling",
+        "desc": [
+            "Titling",
+            "Replaces the default glyphs with corresponding forms designed specifically for titling. These may be all-capital and/or larger on the body, and adjusted for viewing at larger sizes. Off by default."
+        ],
+        "type": "style"
+    },"tjmo": {
+        "cmd": "None",
+        "desc": [
+            "Trailing Jamo Forms",
+            "This feature is not supported on fontspec."
+        ],
+        "type": "not-supported"
+    },
+    "tnam": {
+        "cmd": "None",
+        "desc": [
+            "Traditional Name Forms",
+            "This feature is not supported on fontspec."
+        ],
+        "type": "not-supported"
+    },
+    "tnum": {
+        "cmd": "Numbers = Monospaced",
+        "desc": [
+            "Tabular Figures",
+            "Replaces figure glyphs set on proportional widths with corresponding glyphs set on uniform (tabular) widths. Tabular widths will generally be the default, but this cannot be safely assumed."
+        ],
+        "type": "numbers"
+    },
+    "trad": {
+        "cmd": "CJKShape = Traditional",
+        "desc": [
+            "Traditional Forms",
+            "Replaces “simplified” Chinese or Japanese forms with the corresponding “traditional” forms. Used only for Chinese and Japanese."
+        ],
+        "type": "cjk-shape"
+    },
+    "twid": {
+        "cmd": "CharacterWidth = Third",
+        "desc": [
+            "Third Widths",
+            "Replaces glyphs on other widths with glyphs set on widths of one third of an em (one third of an em). The characters involved are normally figures and some forms of punctuation. Generally used only in CJKV fonts."
+        ],
+        "type": "character-width"
+    },
+    "unic": {
+        "cmd": "Letters = Unicase",
+        "desc": [
+            "Unicase",
+            "Maps upper and lowercase letters to a mixed set of lowercase and small capital forms, resulting in a single case alphabet. Used for bicameral scripts (i.e. those with case differences), such as Latin, Greek, Cyrillic, and Armenian. Off by default."
+        ],
+        "type": "letters"
+    },
+    "valt": {
+        "cmd": "Style = AlternateMetrics",
+        "desc": [
+            "Alternate Vertical Metrics",
+            "Repositions glyphs to visually centre them within full-height metrics, for use in vertical setting. Applies to full-width Latin, Greek, or Cyrillic glyphs, which are typically included in East Asian fonts, and whose glyphs are aligned on a common horizontal baseline and not rotated relative to the page or text frame."
+        ],
+        "type": "style"
+    },
+    "vatu": {
+        "cmd": "None",
+        "desc": [
+            "Vattu Variants",
+            "This feature is not supported on fontspec."
+        ],
+        "type": "not-supported"
+    },
+    "vchw": {
+        "cmd": "None",
+        "desc": [
+            "Vertical Contextual Half-width Spacing",
+            "This feature is not supported on fontspec."
+        ],
+        "type": "not-supported"
+    },
+    "vert": {
+        "cmd": "Vertical = Alternates",
+        "desc": [
+            "Vertical Writing",
+            "Transforms default glyphs into glyphs that are appropriate for upright presentation in vertical writing mode. While the glyphs for most characters in East Asian writing systems remain upright when set in vertical writing mode, some must be transformed---usually by rotation, shifting, or different component ordering---for vertical writing mode."
+        ],
+        "type": "vertical"
+    },
+    "vhal": {
+        "cmd": "Vertical = HalfMetrics",
+        "desc": [
+            "Alternate Vertical Half Metrics",
+            "Re-spaces glyphs designed to be set on full-em heights, fitting them onto half-em heights. This differs from ‘valt’, which repositions a glyph but does not affect its advance. Only used in CJKV fonts."
+        ],
+        "type": "vertical"
+    },
+    "vjmo": {
+        "cmd": "None",
+        "desc": [
+            "Vowel Jamo Forms",
+            "This feature is not supported on fontspec."
+        ],
+        "type": "not-supported"
+    },
+    "vkna": {
+        "cmd": "Style = VerticalKana",
+        "desc": [
+            "Vertical Kana Alternates",
+            "Replaces standard kana with forms that have been specially designed for only vertical writing. This is a typographic optimisation for improved fit and more even colour. Used only for Hiragana and Katakana (Japanese)."
+        ],
+        "type": "style"
+    },
+    "vkrn": {
+        "cmd": "Vertical = Kerning",
+        "desc": [
+            "Vertical Kerning",
+            "Adjusts amount of space between glyphs, generally to provide optically consistent spacing between glyphs. Although a well-designed typeface has consistent inter-glyph spacing overall, some glyph combinations require adjustment for improved legibility."
+        ],
+        "type": "vertical"
+    },
+    "vpal": {
+        "cmd": "Vertical = ProportionalMetrics",
+        "desc": [
+            "Proportional Alternate Vertical Metrics",
+            "Re-spaces glyphs designed to be set on full-em heights, fitting them onto individual (more or less proportional) vertical heights. This differs from 'valt', which repositions a glyph but does not affect its advance. Used mostly in CJKV fonts, off by default. Mutually exclusive with ’vhal’ and ‘valt’."
+        ],
+        "type": "vertical"
+    },
+    "vrt2": {
+        "cmd": "Vertical = RotatedGlyphs",
+        "desc": [
+            "Vertical Alternates and Rotation",
+            "Replaces some fixed-width (half-, third- or quarter-width) or proportional-width glyphs (mostly Latin or katakana) with forms suitable for vertical writing (that is, rotated 90 degrees clockwise). Note that these are a superset of the glyphs covered in the ‘vert’ table."
+        ],
+        "type": "vertical"
+    },
+    "vrtr": {
+        "cmd": "Vertical = AlternatesForRotation",
+        "desc": [
+            "Vertical Alternates for Rotation",
+            "Transforms default glyphs into glyphs that are appropriate for sideways presentation in vertical writing mode. While the glyphs for most characters in East Asian writing systems remain upright when set in vertical writing mode, glyphs for other characters---such as those of other scripts or for particular Western-style punctuation---are expected to be presented sideways in vertical writing."
+        ],
+        "type": "vertical"
+    },
+    "zero": {
+        "cmd": "Numbers = SlashedZero",
+        "desc": [
+            "Slashed Zero",
+            "Allows the user to change from the default 0 to a slashed form to distinguish between 0 and O (zero and capital O) in any situation where capitals and lining figures may be arbitrarily mixed. Used only for 0, off by default."
+        ],
+        "type": "numbers"
+    }
+}
