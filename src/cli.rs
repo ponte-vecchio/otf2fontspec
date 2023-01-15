@@ -13,7 +13,7 @@ macro_rules! crate_author {
 
 pub fn cli() -> Command {
     let cmd = Command::new("otf2fontspec")
-        .about("CLI tool to convert OpenType features to fontspec commands")    
+        .about("CLI tool to convert OpenType features to fontspec commands")
         .author(crate_author!())
         .bin_name("otf2fontspec")
         .version(crate_version!())
@@ -80,7 +80,72 @@ pub fn cli() -> Command {
                         .action(ArgAction::Set),
                 ),
         )
+        .subcommand(
+            // Query subcommand
+            Command::new("query")
+                .short_flag('q')
+                .long_flag("query")
+                .about("Query a font, find its OTF features and print their fontspec commands")
+                .arg(
+                    /* -q <font> */
+                    Arg::new("font")
+                        .help("Font to query")
+                        .required(true)
+                        .index(1)
+                        .action(ArgAction::Set),
                 )
+                .arg(
+                    /* -qd <font> <directory> */
+                    Arg::new("directory")
+                        .short('d')
+                        .long("directory")
+                        .help("Directory to search for font in")
+                        .required(false)
+                        .action(ArgAction::Set),
+                )
+                .arg(
+                    /* -qt <font> <tag> */
+                    /* TODO: Should account for -qdt/-qtd */
+                    Arg::new("tag")
+                        .short('t')
+                        .long("tag")
+                        .help("OTF feature tag to find for a given font")
+                        .required(false)
+                        .action(ArgAction::Set),
+                )
+                .arg(
+                    /* -qa <font> */
+                    Arg::new("all")
+                        .short('a')
+                        .long("all")
+                        .help("Show all OTF features for a given font")
+                        .required(false)
+                        .num_args(0)
+                        .action(ArgAction::SetTrue)
+                        .conflicts_with_all(["supported", "unsupported", "tag"]),
+                )
+                .arg(
+                    /* -qs <font> */
+                    Arg::new("supported")
+                        .short('s')
+                        .long("show")
+                        .help("Show OTF tags supported by fontspec for a given font")
+                        .required(false)
+                        .num_args(0)
+                        .action(ArgAction::SetTrue)
+                        .conflicts_with_all(["all", "unsupported", "tag"]),
+                )
+                .arg(
+                    /* -qu <font> */
+                    Arg::new("unsupported")
+                        .short('u')
+                        .long("unsupported")
+                        .help("Show OTF tags not supported by fontspec for a given font")
+                        .required(false)
+                        .num_args(0)
+                        .action(ArgAction::SetTrue)
+                        .conflicts_with_all(["all", "supported", "tag"]),
+                ),
         );
-        cmd
+    cmd
 }

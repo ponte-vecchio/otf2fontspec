@@ -24,7 +24,7 @@ fn main() {
                 // default to supported (= "-ls")
                 util::print_selected_features(true, false, false);
             }
-            }
+        }
         /* Granular actions for tag subcommands if any */
         Some(("tag", tag_matches)) => {
             let tag_name = tag_matches
@@ -39,6 +39,15 @@ fn main() {
 
             util::print_one_detailed(tag_name);
         }
+        Some(("query", font_matches)) => {
+            util::font_finder(
+                font_matches
+                    .get_one::<String>("font")
+                    .expect("No font name provided"),
+                font_matches
+                    .get_one::<String>("directory")
+                    .get_or_insert(&String::new()),
+            );
         }
         _ => unreachable!(),
     }

@@ -1,6 +1,21 @@
 use colored::{self, Colorize};
+use opentype;
+use regex::Regex;
 use serde_json::Value;
 use std::collections::HashMap;
+use std::env;
+use std::fs;
+use std::path::Path;
+
+#[cfg(target_os = "macos")]
+const LOCFONTDIR: &str = "Library/Fonts";
+const SYSFONTDIR: &str = "/System/Library/Fonts";
+
+#[derive(Debug)]
+struct FontMatch {
+    matched: bool,
+    location: String,
+}
 
 // pub fn get_otf_features() -> HashMap<String, Value> {
 //     let otf_hashmap: HashMap<String, Value> =
@@ -170,5 +185,63 @@ pub fn print_one_detailed(tag_name: &str) {
             "\n{:<8}{}\n{}{}{}{}",
             tag_name, desc_brief, fontspec_left, fontspec_cmd, fontspec_right, desc_long
         );
+    }
+}
+
+/// Get OTF features for a given font.
+pub fn font_finder(fontname: &str, fontdir: &str) {
+    let re = format!(
+        r"{}([-\s]?[rR](egular|oman))?.otf$",
+        &fontname.replace(" ", "").replace("-", "")
+    );
+    let mut is_default_dir = false;
+    let mut query_result = FontMatch {
+        matched: false,
+        location: String::new(),
+    };
+
+    // check if fontdir is empty
+    if fontdir.is_empty() {
+        is_default_dir = true;
+    }
+
+    if !is_default_dir {
+        let lookdir = Path::new(fontdir);
+        for f in fs::read_dir(&lookdir).unwrap() {
+            let file = f.unwrap();
+            let filename = file.file_name().into_string().unwrap();
+            println!("Looking for {} in {}", re, filename);
+            if Regex::new(&re).unwrap().is_match(&filename) {
+                println!("matched");
+            }
+        }
+    } else {
+        // use LOCFONTDIR and SYSFONTDIR
+        let lookdirs = vec![
+            Path::new(&env::var("HOME").unwrap()).join(LOCFONTDIR),
+            Path::new(SYSFONTDIR).to_path_buf(),
+        ];
+
+        for ld in lookdirs {
+            println!("Looking in {:?}", ld);
+            for f in fs::read_dir(&ld).unwrap() {
+                let file = f.unwrap();
+                let filename = file.file_name().into_string().unwrap();
+                // println!("Looking for {} in {}", re, filename);
+                if Regex::new(&re).unwrap().is_match(&filename) {
+                    query_result.matched = true;
+                    query_result.location = file.path().to_str().unwrap().to_string();
+                    println!("{:?}", query_result);
+                }
+            }
+        }
+        // for f in fs::read_dir(&Path::new(&env::var("HOME").unwrap()).join(LOCFONTDIR)).unwrap() {
+        //     let file = f.unwrap();
+        //     let filename = file.file_name().into_string().unwrap();
+        //     println!("Looking for {} in {}", re, filename);
+        //     if Regex::new(&re).unwrap().is_match(&filename) {
+        //         println!("matched");
+        //     }
+        // }
     }
 }
