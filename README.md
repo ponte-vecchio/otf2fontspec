@@ -14,4 +14,4 @@ CLI tools to look up:
 
 2. I don't want to have to go through `fontspec` documentation to look up what commands I need to access certain OTF features.
 
-3. I don't want to have to look up online to get an idea of what a feature is/does. ().
+3. I don't want to have to look up online to get an idea of what a feature is/does. (WIP).

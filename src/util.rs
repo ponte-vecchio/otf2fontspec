@@ -22,16 +22,16 @@ use std::collections::HashMap;
 /// Returns a parsed hashmap and the tag names as a tuple.
 pub fn get_otf_names_and_features() -> (Vec<String>, HashMap<String, Value>) {
     let hashmap: HashMap<String, Value> = serde_json::from_str(include_str!("map.json")).unwrap();
-    let mut tag_names: Vec<_> = hashmap.keys().cloned().collect();
+    let mut tag_names: Vec<String> = hashmap.keys().cloned().collect();
     tag_names.sort();
     (tag_names, hashmap)
 }
 
 /// Prints the header of the table.
-pub fn print_header(print_for: String) {
+pub fn print_header(print_for: &str) {
     let header_1 = "Feature";
     let header_2 = "Description";
-    let header_3 = match print_for.as_str() {
+    let header_3 = match print_for {
         "deprecated" | "unsupported" => "",
         print_for if print_for.contains("-") => "",
         _ => "Fontspec Option",
@@ -48,11 +48,7 @@ pub fn print_header(print_for: String) {
     );
 }
 
-pub fn fprint(
-    row1: &str,
-    row2: &str,
-    row3: &str
-) {
+pub fn fprint(row1: &str, row2: &str, row3: &str) {
     println!("{:<9}{:<40}{}", row1.bold().cyan(), row2, row3.magenta());
 }
 
@@ -60,7 +56,7 @@ pub fn fprint(
 pub fn print_all_features() {
     let (mut tag_names, otf_hashmap) = get_otf_names_and_features();
     /* print header */
-    print_header("".to_string());
+    print_header("");
     // make a sorted array from tag_names
     tag_names.sort();
 
@@ -71,8 +67,7 @@ pub fn print_all_features() {
 
         // do not print fontspec_cmd if it's equal to "None"
         if fontspec_cmd == "None" {
-            fprint(
-                f, desc_brief, "-");
+            fprint(f, desc_brief, "-");
         } else {
             fprint(f, desc_brief, fontspec_cmd);
         }
@@ -88,7 +83,7 @@ pub fn print_selected_features(supported: bool, unsupported: bool, deprecated: b
         _ => unreachable!(),
     };
 
-    let (_, otfdict) = get_otf_names_and_features();
+    let (tag_names, otfdict) = get_otf_names_and_features();
 
     // extract the values of "type" key
     fn gather_keys_by_value(
@@ -121,25 +116,28 @@ pub fn print_selected_features(supported: bool, unsupported: bool, deprecated: b
     let tags_per_type = gather_keys_by_value(otfdict.clone(), "type");
 
     if !supported {
-        print_header(mode.to_string().replace("\"", ""));
-        for v in tags_per_type[mode].iter() {
+        let mut keys_to_use = tags_per_type[mode].clone();
+        keys_to_use.sort();
+        print_header(mode.replace("\"", "").as_str());
+        for v in keys_to_use.iter() {
             let desc_brief = otfdict[v]["desc"][0].as_str().unwrap();
-            fprint(v, desc_brief, "not supported");
-            // println!(
-                // "{:<9}{:<40}{}",
-                // v.bold().cyan(),
-                // desc_brief,
-                // "not supported".red()
-            // );
+            fprint(
+                v,
+                desc_brief,
+                mode.replace("\"", "")
+                    .replace("-", " ")
+                    .to_uppercase()
+                    .as_str(),
+            );
         }
     } else {
-        print_header("".to_string());
-        for (k, v) in otfdict.iter() {
-            if v["type"] == "not-supported" || v["type"] == "deprecated" {
+        print_header("");
+        for k in tag_names.iter() {
+            if otfdict[k]["type"] == "not-supported" || otfdict[k]["type"] == "deprecated" {
                 continue;
             } else {
-                let desc_brief = v["desc"][0].as_str().unwrap();
-                let fontspec_cmd = v["cmd"].as_str().unwrap();
+                let desc_brief = otfdict[k]["desc"][0].as_str().unwrap();
+                let fontspec_cmd = otfdict[k]["cmd"].as_str().unwrap();
                 fprint(k, desc_brief, fontspec_cmd);
             }
         }
@@ -147,34 +145,26 @@ pub fn print_selected_features(supported: bool, unsupported: bool, deprecated: b
 }
 
 /// Prints a single OTF tag, name and fontspec option and detailed description.
-pub fn print_one_detailed(tag_name: String) {
+pub fn print_one_detailed(tag_name: &str) {
     let mut tag_name = tag_name.to_lowercase().replace(" ", "");
     let (feature_tags, otf_hashmap) = get_otf_names_and_features();
-    let mut fontspec_left: String = "\n\\setmainfont{...}[".to_string();
-    let mut fontspec_right: String = "]\n\n".to_string();
+    let mut fontspec_left = "\n\\setmainfont{...}[";
+    let mut fontspec_right = "]\n\n";
 
     // exit early if tag_name is not found in feature_tags
-    // TODO: print suggestions for the closest match from feature_tags
-    //       e.g. "Did you mean c2sc?"
     if !feature_tags.contains(&tag_name) {
         println!("Feature name not found.");
         std::process::exit(1);
     } else {
-        let desc_brief: String = otf_hashmap[&tag_name]["desc"][0]
-            .as_str()
-            .unwrap()
-            .to_string();
-        let desc_long: String = otf_hashmap[&tag_name]["desc"][1]
-            .as_str()
-            .unwrap()
-            .to_string();
-        let mut fontspec_cmd: String = otf_hashmap[&tag_name]["cmd"].as_str().unwrap().to_string();
+        // TODO: print suggestions for the closest match from feature_tags
+        //       e.g. c2dc -> "Did you mean c2sc?"
+        let desc_brief = otf_hashmap[&tag_name]["desc"][0].as_str().unwrap();
+        let desc_long = otf_hashmap[&tag_name]["desc"][1].as_str().unwrap();
+        let mut fontspec_cmd = otf_hashmap[&tag_name]["cmd"].as_str().unwrap();
         tag_name = tag_name.to_uppercase();
         // check if desc_brief is "None", and make fontspec_* as empty string.
         if fontspec_cmd == "None" {
-            fontspec_left = "".to_string();
-            fontspec_right = "\n".to_string();
-            fontspec_cmd = "".to_string();
+            (fontspec_left, fontspec_cmd, fontspec_right) = ("", "\n", "");
         }
         println!(
             "\n{:<8}{}\n{}{}{}{}",

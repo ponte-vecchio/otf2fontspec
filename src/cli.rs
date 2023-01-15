@@ -1,11 +1,5 @@
 use clap::{Arg, ArgAction, Command};
-/// Ideas on command line options
-// -a, --all: print all features and commands
-// -t, --feature: print fontspec command for a given OTF feature
-// -q, --query: query a font, find its OTF features and print their fontspec commands
-// -d, --directory: optional if argument for -q exists. Searches for a given font in that directory
-// -h, --help: print help message
-// -v, --version: print version number
+
 macro_rules! crate_version {
     () => {
         env!("CARGO_PKG_VERSION")
@@ -31,42 +25,46 @@ pub fn cli() -> Command {
                 .short_flag('l')
                 .long_flag("list")
                 .about("Print all features and their fontspec commands, if available")
-                .arg(/* -la */
+                .arg(
+                    /* -la */
                     Arg::new("all")
                         .short('a')
                         .long("all")
                         .help("Print all features, including unsupported and deprecated ones")
-                        .conflicts_with_all(["supported","deprecated", "unsupported"])
+                        .conflicts_with_all(["supported", "deprecated", "unsupported"])
                         .num_args(0)
-                        .action(ArgAction::SetTrue)
+                        .action(ArgAction::SetTrue),
                 )
-                .arg(/* -ld */
+                .arg(
+                    /* -ld */
                     Arg::new("deprecated")
                         .short('d')
                         .long("deprecated")
                         .help("Show deprecated OTF tags")
                         .conflicts_with_all(["all", "supported", "unsupported"])
                         .num_args(0)
-                        .action(ArgAction::SetTrue)
+                        .action(ArgAction::SetTrue),
                 )
-                .arg(/* -ls */
+                .arg(
+                    /* -ls */
                     Arg::new("supported")
                         .short('s')
                         .long("supported")
                         .help("Show OTF tags supported by fontspec")
                         .conflicts_with_all(["all", "deprecated", "unsupported"])
                         .num_args(0)
-                        .action(ArgAction::SetTrue)
+                        .action(ArgAction::SetTrue),
                 )
-                .arg(/* -lu */
+                .arg(
+                    /* -lu */
                     Arg::new("unsupported")
                         .short('u')
                         .long("unsupported")
                         .help("Show OTF tags not supported by fontspec")
                         .conflicts_with_all(["all", "supported", "deprecated"])
                         .num_args(0)
-                        .action(ArgAction::SetTrue)
-                )
+                        .action(ArgAction::SetTrue),
+                ),
         )
         .subcommand(
             // Tag subcommand
@@ -79,7 +77,9 @@ pub fn cli() -> Command {
                         .help("OTF feature to print fontspec command for")
                         .required(true)
                         .index(1)
-                        .action(ArgAction::Set)
+                        .action(ArgAction::Set),
+                ),
+        )
                 )
         );
         cmd
